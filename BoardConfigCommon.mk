@@ -68,7 +68,9 @@ TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
 # Fingerprint
 ifeq ($(TARGET_HAS_FOD),true)
+ifneq ($(TARGET_HAS_OWN_FP),true)
 TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/xiaomi:libudfps_extension.xiaomi
+endif
 endif
 
 # FM
@@ -76,8 +78,7 @@ BOARD_HAVE_QCOM_FM := true
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(COMMON_PATH)/framework_compatibility_matrix.xml \
-    vendor/aosp/config/device_framework_matrix.xml
+    $(COMMON_PATH)/framework_compatibility_matrix.xml
 DEVICE_MATRIX_FILE += $(COMMON_PATH)/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 ODM_MANIFEST_SKUS += nfc nfc_ese
@@ -104,7 +105,7 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8150-legacy
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8150
 TARGET_KERNEL_CONFIG := vendor/sm8150-perf_defconfig vendor/xiaomi/sm8150-common.config
 
 # Partitions

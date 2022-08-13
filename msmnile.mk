@@ -191,8 +191,10 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
+ifneq ($(TARGET_HAS_OWN_FP),true)
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.xiaomi
+
 
 ifeq ($(TARGET_HAS_FOD),true)
 PRODUCT_PACKAGES += \
@@ -201,6 +203,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor
 endif
+endif
+
 
 # FM
 PRODUCT_PACKAGES += \
@@ -257,11 +261,6 @@ PRODUCT_PACKAGES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light-service.xiaomi
-
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm \
-    vendor.lineage.livedisplay@2.1-service.sm8150
 
 # Media
 PRODUCT_PACKAGES += \
@@ -426,23 +425,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
-
-# Telephony
-PRODUCT_PACKAGES += \
-    ims-ext-common \
-    ims_ext_common.xml \
-    qti-telephony-hidl-wrapper \
-    qti_telephony_hidl_wrapper.xml \
-    qti-telephony-utils \
-    qti_telephony_utils.xml \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
-# Trust
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \

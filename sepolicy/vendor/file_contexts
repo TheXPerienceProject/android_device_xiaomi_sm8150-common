@@ -37,6 +37,7 @@
 
 # Fingerprint
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi                          u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.cepheus                          u:object_r:hal_fingerprint_default_exec:s03
 
 # Fingerprint - devices
 /dev/goodix_fp                                                          u:object_r:fingerprint_device:s0
@@ -69,9 +70,6 @@
 
 # Lights
 /vendor/bin/hw/android\.hardware\.light-service\.xiaomi                 u:object_r:hal_light_default_exec:s0
-
-# Livedisplay
-/vendor/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.sm8150    u:object_r:hal_lineage_livedisplay_qti_exec:s0
 
 # Mlipay
 /vendor/bin/mlipayd@1\.1                                                u:object_r:hal_mlipay_default_exec:s0
