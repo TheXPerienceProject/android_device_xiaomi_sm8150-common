@@ -28,3 +28,6 @@ allow mi_thermald {
 } rw_file_perms;
 
 set_prop(mi_thermald, vendor_thermal_normal_prop)
+
+# neverallow
+allow mi_thermald sysfs:dir {read search};

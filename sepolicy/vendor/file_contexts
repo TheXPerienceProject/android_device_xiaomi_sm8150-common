@@ -37,7 +37,7 @@
 
 # Fingerprint
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi                          u:object_r:hal_fingerprint_default_exec:s0
-/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.cepheus                          u:object_r:hal_fingerprint_default_exec:s03
+/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.cepheus                          u:object_r:hal_fingerprint_default_exec:s0
 
 # Fingerprint - devices
 /dev/goodix_fp                                                          u:object_r:fingerprint_device:s0
@@ -48,8 +48,15 @@
 /data/vendor/fpc(/.*)?                                                  u:object_r:fingerprint_vendor_data_file:s0
 /data/vendor/fpdump(/.*)?                                               u:object_r:fingerprint_vendor_data_file:s0
 
+#cepheus why
+/mnt/vendor/persist/goodix(/.*)?                                               u:object_r:fingerprint_data_file:s0 
+/mnt/vendor/persist/fpc(/.*)?                                               u:object_r:fingerprint_data_file:s0 
+
 # FOD
 /sys/devices/virtual/touch/tp_dev/fod_status                            u:object_r:vendor_sysfs_graphics:s0
+
+# Gpu
+/sys/class/kgsl/kgsl-3d0/gpu_model u:object_r:vendor_sysfs_kgsl_gpu_model:s0
 
 # HBM
 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm           u:object_r:vendor_sysfs_hbm:s0
