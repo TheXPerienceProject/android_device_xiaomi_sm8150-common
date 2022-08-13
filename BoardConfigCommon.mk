@@ -68,9 +68,7 @@ TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
 # Fingerprint
 ifeq ($(TARGET_HAS_FOD),true)
-ifneq ($(TARGET_HAS_OWN_FP),true)
 TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/xiaomi:libudfps_extension.xiaomi
-endif
 endif
 
 # FM
